@@ -44,7 +44,7 @@ epochs = 20
 
 
 model = Sequential([
-Conv2D(filters = 32, kernel_size = 5, strides = 1, activation = 'tanh', input_shape = (28,28,1), kernel_regularizer=l2(0.0005), name = 'convolution_1'),
+Conv2D(filters = 32, kernel_size = 5, strides = 1, activation = 'relu', input_shape = (28,28,1), kernel_regularizer=l2(0.0005), name = 'convolution_1'),
 Conv2D(filters = 32, kernel_size = 5, strides = 1, name = 'convolution_2', use_bias=False),
 BatchNormalization(name = 'batchnorm_1'),
     
@@ -55,7 +55,7 @@ Dropout(0.25, name = 'dropout_1'),
 # -------------------------------- #  
     
 # Layer 3
-Conv2D(filters = 64, kernel_size = 3, strides = 1, activation = 'tanh', kernel_regularizer=l2(0.0005), name = 'convolution_3'),
+Conv2D(filters = 64, kernel_size = 3, strides = 1, activation = 'relu', kernel_regularizer=l2(0.0005), name = 'convolution_3'),
     
 # Layer 4
 Conv2D(filters = 64, kernel_size = 3, strides = 1, name = 'convolution_4', use_bias=False),
@@ -64,7 +64,7 @@ Conv2D(filters = 64, kernel_size = 3, strides = 1, name = 'convolution_4', use_b
 BatchNormalization(name = 'batchnorm_2'),
     
 # -------------------------------- #  
-Activation("tanh"),
+Activation("relu"),
 MaxPooling2D(pool_size = 2, strides = 2, name = 'max_pool_2'),
 Dropout(0.25, name = 'dropout_2'),
 Flatten(name = 'flatten'),
@@ -77,7 +77,7 @@ Dense(units = 256, name = 'fully_connected_1', use_bias=False),
 BatchNormalization(name = 'batchnorm_3'),
 
 # -------------------------------- #  
-Activation("tanh"),
+Activation("relu"),
 # -------------------------------- #  
     
 # Layer 8
@@ -87,7 +87,7 @@ Dense(units = 128, name = 'fully_connected_2', use_bias=False),
 BatchNormalization(name = 'batchnorm_4'),
     
 # -------------------------------- #  
-Activation("tanh"),
+Activation("relu"),
 # -------------------------------- #  
     
 # Layer 10
@@ -97,7 +97,7 @@ Dense(units = 84, name = 'fully_connected_3', use_bias=False),
 BatchNormalization(name = 'batchnorm_5'),
     
 # -------------------------------- #  
-Activation("tanh"),
+Activation("relu"),
 Dropout(0.25, name = 'dropout_3'),
 # -------------------------------- #  
 
