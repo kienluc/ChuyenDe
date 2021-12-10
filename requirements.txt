@@ -11,7 +11,6 @@ google-pasta==0.2.0
 grpcio==1.42.0
 h5py==3.6.0
 idna==3.3
-img==2.5
 importlib-metadata==4.8.2
 keras==2.7.0
 keras-nightly==2.8.0.dev2021120108
